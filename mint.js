@@ -49,12 +49,12 @@ async function main() {
     try {
         walletData = JSON.parse(fs.readFileSync('evm_wallets.json', 'utf-8'));
     } catch (e) {
-        console.log('未找到 evm_wallets.json 文件');
+        console.log('未找到 evm_wallets.json 文件======');
     }
 
     Promise.all(walletData.map(wallet => performTransaction(wallet, process.env.NUMBER_OF_TIMES)))
         .then(() => {
-            console.log("所有操作完成");
+            console.log("所有操作完成======");
         })
         .catch(error => {
             console.error("操作中有错误发生: ", error);
